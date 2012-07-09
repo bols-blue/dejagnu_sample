@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE testsuite [
+<!-- testsuite.dtd -->
+<!ELEMENT testsuite (test | summary)+>
+<!ELEMENT test (input, output, result, name, prms_id )>
+  <!ELEMENT input              (#PCDATA)>
+  <!ELEMENT output             (#PCDATA)>
+  <!ELEMENT result             (#PCDATA)>
+  <!ELEMENT name               (#PCDATA)>
+  <!ELEMENT prms_id            (#PCDATA)>
+  <!ELEMENT summary 	(result, description, total)>
+  <!ELEMENT description        (#PCDATA)>
+  <!ELEMENT total              (#PCDATA)>
+]>
+<testsuite>
+  <test>
+    <input>version</input>
+    <output>Version: 1.1</output>
+    <result>PASS</result>
+    <name>version</name>
+    <prms_id>0</prms_id>
+  </test>
+  <test>
+    <input>add 3 4</input>
+    <output>7</output>
+    <result>PASS</result>
+    <name>add1</name>
+    <prms_id>0</prms_id>
+  </test>
+  <test>
+    <input>add 1 2 3</input>
+    <output>Usage: add #1 #2</output>
+    <result>PASS</result>
+    <name>add2</name>
+    <prms_id>0</prms_id>
+  </test>
+  <test>
+    <input>multiply 3 4</input>
+    <output>12</output>
+    <result>PASS</result>
+    <name>multiply1</name>
+    <prms_id>0</prms_id>
+  </test>
+  <test>
+    <input>multiply 2 4</input>
+    <output>12</output>
+    <result>FAIL</result>
+    <name>multiply2 (bad match)</name>
+    <prms_id>0</prms_id>
+  </test>
+  <test>
+    <input>multiply 1 2 3</input>
+    <output>Usage: multiply #1 #2</output>
+    <result>PASS</result>
+    <name>multiply3</name>
+    <prms_id>0</prms_id>
+  </test>
+  <summary>
+    <result>PASS</result>
+    <description># of expected passes</description>
+    <total>5</total>
+  </summary>
+  <summary>
+    <result>FAIL</result>
+    <description># of unexpected failures</description>
+    <total>1</total>
+  </summary>
+</testsuite>
